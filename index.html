@@ -1,298 +1,262 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Maisha (May) Takahashi — Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Maisha (May) Takahashi — Portfolio</title>
 
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            moss: "#5C7F6D",
-            fern: "#7FA386",
-            sky: "#A8C8E7",
-            dusk: "#1f2937",
-            paper: "#F5F1E6",
-            tea: "#E5ECD9",
-          },
-          boxShadow: { glow: "0 0 30px rgba(168,200,231,0.35)" },
-          fontFamily: {
-            display: ['"DM Serif Display"', "serif"],
-            body: ['"Nunito"', "system-ui", "sans-serif"],
-          }
-        }
-      }
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { ink:"#0F1620", leaf:"#6B8F72", sky:"#A8C8E7", paper:"#F5F1E6" },
+      boxShadow:{ card:"0 6px 24px rgba(0,0,0,.08)", glow:"0 0 32px rgba(168,200,231,.35)" },
+      fontFamily:{ display:['"DM Serif Display"','serif'], body:['"Nunito"','system-ui','sans-serif'] }
     }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* paper grain */
-    .grain:before{content:"";position:fixed;inset:0;pointer-events:none;
-      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" opacity="0.08"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
-      mix-blend-mode:multiply}
-    /* soft float */
-    .float-slow{animation:float 14s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-    .fade-in{animation:fade .8s ease-out both}
-    @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-    /* Ghibli-ish background layers */
-    .layer-forest{background:url('/assets/bg-forest.png') center/cover no-repeat fixed}
-    .layer-mist{background:radial-gradient(1200px 400px at 50% -10%, rgba(168,200,231,.25), transparent)}
-  </style>
-  <meta name="description" content="Portfolio of Maisha (May) Takahashi — CS & Math @ Rutgers. Projects, professional experience, and leadership." />
+<style>
+/* paper grain */
+.grain:before{content:"";position:fixed;inset:0;pointer-events:none;
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" opacity=".09"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>');
+  mix-blend-mode:multiply}
+.fade-in{animation:fade .7s ease-out both}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* your files as backgrounds */
+.hero-bg{background:url('/assets/train.avif') center/cover no-repeat}
+.divider-bg{background:url('/assets/chicks.jpg') center/cover no-repeat}
+
+</style>
+
+<meta name="description" content="Portfolio of Maisha (May) Takahashi — projects, experience, leadership." />
 </head>
 
-<body class="bg-dusk text-stone-100 font-body selection:bg-sky/30 selection:text-dusk grain">
-  <!-- mist + forest vibe -->
-  <div class="fixed inset-0 -z-20 layer-forest opacity-[0.15]"></div>
-  <div class="fixed inset-0 -z-10 layer-mist"></div>
+<body class="bg-paper text-ink font-body grain">
 
-  <!-- Nav -->
-  <header class="sticky top-0 z-50 backdrop-blur bg-dusk/60 border-b border-white/10">
-    <nav class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="font-display text-xl tracking-wide">Maisha (May) Takahashi</a>
-      <div class="hidden sm:flex gap-6 text-sm">
-        <a href="#projects" class="hover:opacity-80">Projects</a>
-        <a href="#experience" class="hover:opacity-80">Experience</a>
-        <a href="#leadership" class="hover:opacity-80">Leadership</a>
-        <a href="#about" class="hover:opacity-80">About</a>
-        <a href="#contact" class="hover:opacity-80">Contact</a>
-      </div>
-      <a href="/assets/May_Takahashi_Resume.pdf" class="text-sm px-3 py-2 rounded-md bg-sky/20 hover:bg-sky/30 border border-white/10">Résumé</a>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <!-- floating cloud -->
-    <img src="/assets/cloud-1.png" alt="" class="pointer-events-none opacity-30 absolute -top-8 -left-6 w-64 float-slow" />
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-20 pb-14">
-      <div class="grid md:grid-cols-5 gap-8 items-center fade-in">
-        <div class="md:col-span-3">
-          <h1 class="font-display text-4xl sm:text-5xl leading-tight">
-            Crafting calm, readable interfaces — <span class="text-sky">with quiet, woodland energy.</span>
-          </h1>
-          <p class="mt-4 text-stone-300 max-w-prose">
-            I’m May, a CS & Math student at Rutgers (GPA 4.0) building front-end systems and practical tools.
-            I’ve shipped two public projects and completed three professional experiences (two internships + one fellowship).
-          </p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#projects" class="px-5 py-2.5 rounded-md bg-fern/30 hover:bg-fern/40 border border-white/10 shadow-glow">See projects</a>
-            <a href="#experience" class="px-5 py-2.5 rounded-md bg-sky/20 hover:bg-sky/30 border border-white/10">Experience</a>
-            <a href="#contact" class="px-5 py-2.5 rounded-md bg-white/10 hover:bg-white/20 border border-white/10">Get in touch</a>
-          </div>
-          <p class="mt-4 text-sm text-stone-400">
-            GitHub: <a href="https://github.com/maytakahashi" class="underline">maytakahashi</a> •
-            LinkedIn: <a href="https://www.linkedin.com/in/maisha-takahashi/" class="underline">maisha-takahashi</a> •
-            Email: <a href="mailto:maishatakahashi@gmail.com" class="underline">maishatakahashi@gmail.com</a>
-          </p>
-        </div>
-        <div class="md:col-span-2">
-          <div class="relative p-1.5 rounded-2xl bg-gradient-to-b from-tea/40 to-paper/30 shadow-glow border border-white/10">
-            <div class="rounded-xl bg-paper/70 p-5 text-dusk">
-              <p class="text-xs uppercase tracking-wider text-moss/90">Currently</p>
-              <h3 class="mt-1 font-semibold">Building & Leading</h3>
-              <ul class="mt-2 text-sm text-dusk/80 list-disc list-inside space-y-1">
-                <li>Front-end systems (React/Tailwind), clean UX</li>
-                <li>Data-aware features + dashboards</li>
-                <li>Campus leadership & teaching initiatives</li>
-              </ul>
-            </div>
-          </div>
-          <p class="mt-3 text-xs text-stone-400">Theme: moss • sky • paper • dusk</p>
-        </div>
-      </div>
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-paper/80 backdrop-blur border-b border-black/5">
+  <nav class="mx-auto max-w-6xl h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <a class="font-display text-xl">Maisha (May) Takahashi</a>
+    <div class="hidden sm:flex gap-6 text-sm">
+      <a href="#projects" class="hover:text-leaf">Projects</a>
+      <a href="#experience" class="hover:text-leaf">Experience</a>
+      <a href="#leadership" class="hover:text-leaf">Leadership</a>
+      <a href="#footer" class="hover:text-leaf">Contact</a>
     </div>
-  </section>
+    <a href="/assets/May_Takahashi_Resume.pdf" class="text-sm px-3 py-2 rounded-md bg-leaf/15 hover:bg-leaf/25 border border-black/10">Résumé</a>
+  </nav>
+</header>
 
-  <!-- Projects -->
-  <section id="projects" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
-    <h2 class="font-display text-3xl">Featured Projects</h2>
-    <p class="mt-2 text-stone-300">Two polished case studies beat ten unfinished ones.</p>
+<!-- HERO (with staggered “Currently” & “Skills”) -->
+<section class="relative overflow-hidden">
+  <div class="hero-bg absolute inset-0 opacity-[.35]"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-sky/20 via-paper/40 to-paper"></div>
+  <div class="absolute right-0 top-8 w-[360px] h-[260px] hidden lg:block hero-mark"></div>
 
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <!-- Market Owl -->
-      <article class="rounded-2xl p-1.5 bg-gradient-to-b from-fern/20 to-sky/10 border border-white/10 hover:shadow-glow transition">
-        <div class="rounded-xl bg-dusk/60 p-5 h-full flex flex-col">
-          <img src="/assets/market-owl-cover.png" alt="Market Owl preview" class="rounded-md aspect-[16/9] object-cover border border-white/10 mb-4">
-          <h3 class="text-xl font-semibold">Market Owl</h3>
-          <p class="mt-1 text-sm text-stone-300">AI negotiator for Facebook Marketplace that reduced fraudulent exchanges by 80% and secured lowered prices in 95% of purchases.</p>
-          <ul class="mt-3 text-sm text-stone-300 space-y-1">
-            <li><span class="text-sky">Stack:</span> Next.js, Tailwind, FastAPI, Ollama, LLaMA, Modal</li>
-            <li><span class="text-sky">Highlights:</span> Listing & DM analysis, seller-specific prompts, Modal-deployed fine-tune</li>
-          </ul>
-          <div class="mt-auto pt-4 flex gap-3">
-            <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-sky/20 hover:bg-sky/30 border border-white/10">Live</a>
-            <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 border border-white/10">Code</a>
-            <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-fern/20 hover:bg-fern/30 border border-white/10">Case Study</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- RU Pathway Planner -->
-      <article class="rounded-2xl p-1.5 bg-gradient-to-b from-fern/20 to-sky/10 border border-white/10 hover:shadow-glow transition">
-        <div class="rounded-xl bg-dusk/60 p-5 h-full flex flex-col">
-          <img src="/assets/ru-planner-cover.png" alt="RU Pathway Planner preview" class="rounded-md aspect-[16/9] object-cover border border-white/10 mb-4">
-          <h3 class="text-xl font-semibold">RU Pathway Planner</h3>
-          <p class="mt-1 text-sm text-stone-300">Scheduling tool for Rutgers students to plan up to four semesters, respecting prerequisites and major/minor overlaps across 150+ majors.</p>
-          <ul class="mt-3 text-sm text-stone-300 space-y-1">
-            <li><span class="text-sky">Stack:</span> Svelte (Vite), Tailwind</li>
-            <li><span class="text-sky">Highlights:</span> Constraint-aware combinations, clean UI for roadmap planning</li>
-          </ul>
-          <div class="mt-auto pt-4 flex gap-3">
-            <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-sky/20 hover:bg-sky/30 border border-white/10">Live</a>
-            <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 border border-white/10">Code</a>
-            <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-fern/20 hover:bg-fern/30 border border-white/10">Case Study</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Professional Experience (internships + fellowship) -->
-  <section id="experience" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
-    <h2 class="font-display text-3xl">Professional Experience</h2>
-    <div class="mt-6 space-y-6">
-      <!-- Jane Street Fellowship -->
-      <div class="rounded-2xl p-1.5 bg-gradient-to-b from-sky/20 to-fern/10 border border-white/10">
-        <div class="rounded-xl bg-dusk/60 p-5">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <h3 class="text-xl font-semibold">Jane Street — Software Engineering Fellow</h3>
-            <span class="text-sm text-stone-300">Jun 2025 – Aug 2025 • New York, NY</span>
-          </div>
-          <ul class="mt-2 text-sm text-stone-300 space-y-1">
-            <li>Developed an electronic trading bot using market-making & arbitrage strategies across ETFs/ADRs/bonds.</li>
-            <li>Built game AIs and async systems in OCaml; image manipulation & graph traversal exercises.</li>
-            <li>Designed a real-time strategy game in OCaml; ~50 entities under 2 ms/frame.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Colgate-Palmolive -->
-      <div class="rounded-2xl p-1.5 bg-gradient-to-b from-sky/20 to-fern/10 border border-white/10">
-        <div class="rounded-xl bg-dusk/60 p-5">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <h3 class="text-xl font-semibold">Colgate-Palmolive — Software Development Intern</h3>
-            <span class="text-sm text-stone-300">Jan 2025 – May 2025 • Piscataway, NJ</span>
-          </div>
-          <ul class="mt-2 text-sm text-stone-300 space-y-1">
-            <li>Shipped GCP IAM role-removal & ticket-cancellation UX (React/JS); cut manual support tickets by 50%.</li>
-            <li>Added Freshservice mock system into CI/CD; improved release reliability.</li>
-            <li>Pre-release validation with GitHub Actions for thorough feature checks.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Munch Industries -->
-      <div class="rounded-2xl p-1.5 bg-gradient-to-b from-sky/20 to-fern/10 border border-white/10">
-        <div class="rounded-xl bg-dusk/60 p-5">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <h3 class="text-xl font-semibold">Munch Industries Inc. — Software Engineering Intern</h3>
-            <span class="text-sm text-stone-300">Jun 2024 – Dec 2024 • Philadelphia, PA</span>
-          </div>
-          <ul class="mt-2 text-sm text-stone-300 space-y-1">
-            <li>Automated onboarding via third-party API integrations; reduced ops time by 40%.</li>
-            <li>Built machine-health data logging with Python + AWS (DynamoDB, RDS), batching at 8h/30m intervals.</li>
-            <li>CloudWatch + SNS alerting; dashboard for sensor metrics; org-wide 2-minute notifications.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leadership -->
-  <section id="leadership" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
-    <h2 class="font-display text-3xl">Leadership on Campus</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <!-- PCT -->
-      <div class="rounded-2xl p-1.5 bg-gradient-to-b from-fern/20 to-sky/10 border border-white/10">
-        <div class="rounded-xl bg-dusk/60 p-5 h-full">
-          <h3 class="font-semibold">Phi Chi Theta — President (incoming)</h3>
-          <p class="text-sm text-stone-300">Dec 2026 • New Brunswick, NJ</p>
-          <ul class="mt-2 text-sm text-stone-300 space-y-1">
-            <li>Oversees community service, professional, and social programs.</li>
-            <li>Focus on inclusive recruiting, fellowship, and high-bar events.</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Blueprint -->
-      <div class="rounded-2xl p-1.5 bg-gradient-to-b from-fern/20 to-sky/10 border border-white/10">
-        <div class="rounded-xl bg-dusk/60 p-5 h-full">
-          <h3 class="font-semibold">Blueprint Incubator — VP, Frontend Web Dev</h3>
-          <p class="text-sm text-stone-300">Sep 2024 – Present • New Brunswick, NJ</p>
-          <ul class="mt-2 text-sm text-stone-300 space-y-1">
-            <li>Led 5 instructors delivering an 8-week full-stack program to 20 fellows.</li>
-            <li>Created a directory of 50+ references and personalized guides.</li>
-          </ul>
-        </div>
-      </div>
-      <!-- Origami Club -->
-      <div class="rounded-2xl p-1.5 bg-gradient-to-b from-fern/20 to-sky/10 border border-white/10">
-        <div class="rounded-xl bg-dusk/60 p-5 h-full">
-          <h3 class="font-semibold">RU Origami Club — President & Founder</h3>
-          <p class="text-sm text-stone-300">Sep 2024 – Present • New Brunswick, NJ</p>
-          <ul class="mt-2 text-sm text-stone-300 space-y-1">
-            <li>Built club site (HTML/CSS/JS + DNS); showcases events & involvement.</li>
-            <li>Ran elections, recruitment, weekly workshops (350+ attendees).</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="grid md:grid-cols-5 gap-8 items-center">
+  <div class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+    <div class="grid md:grid-cols-5 gap-6 items-start fade-in">
+      <!-- Left intro -->
       <div class="md:col-span-3">
-        <h2 class="font-display text-3xl">About</h2>
-        <p class="mt-3 text-stone-300">
-          CS & Math @ Rutgers (GPA 4.0). I like quiet, readable code, human-friendly interfaces, and teams that ship.
+        <h1 class="font-display text-[40px] sm:text-5xl leading-tight">
+          Hi, I'm <span class="text-ink/80">May Takahashi.</span>
+        </h1>
+        <p class="mt-4 text-[15px] text-ink/80 max-w-prose">
+          I'm a CS & Math student at Rutgers University. Most recently, I worked at Jane Street this summer (2025) as a Software Engineering Fellow where I've been exploring functional programming in OCaml, building projects in graph traversal, async systems, and web scraping.
+          <br> Most of my personal and past professional work involves designing, developing, and contributing to full-stack applications. 
+          <br> <br> <i>Reach me anytime at maishatakahashi@gmail.com. </i>
         </p>
-        <p class="mt-2 text-stone-300">
-          Languages/Tools I use most: JavaScript/TypeScript, React/Next.js, Tailwind, Python, SQL, AWS/GCP, Git/GitHub, Figma.
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#projects" class="px-5 py-2.5 rounded-md bg-leaf/25 hover:bg-leaf/35 border border-black/10 shadow-glow">See projects</a>
+          <a href="#experience" class="px-5 py-2.5 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">Experience</a>
+          <a href="#footer" class="px-5 py-2.5 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">Get in touch</a>
+        </div>
+        <p class="mt-4 text-sm text-ink/70">
+          GitHub: <a class="underline" href="https://github.com/maytakahashi">maytakahashi</a> •
+          LinkedIn: <a class="underline" href="https://www.linkedin.com/in/maisha-takahashi/">maisha-takahashi</a> •
+          Email: <a class="underline" href="mailto:maishatakahashi@gmail.com">maishatakahashi@gmail.com</a>
         </p>
       </div>
+
+      <!-- Right column: staggered cards -->
       <div class="md:col-span-2">
-        <div class="rounded-2xl p-1.5 bg-gradient-to-b from-tea/30 to-paper/20 border border-white/10">
-          <div class="rounded-xl bg-paper/70 p-5 text-dusk">
-            <h3 class="font-semibold">Skills</h3>
-            <div class="mt-2 grid grid-cols-2 gap-y-1 text-sm text-dusk/80">
-              <span>React / Next.js</span><span>Tailwind</span>
-              <span>TypeScript</span><span>Python</span>
-              <span>MySQL / RDS</span><span>AWS / GCP</span>
-              <span>OCaml</span><span>Flask</span>
-              <span>Git/GitHub</span><span>Figma</span>
+        <!-- Currently -->
+        <div class="rounded-2xl border border-black/10 bg-[#fffdf7]/95 p-5 shadow-card md:max-w-[380px]">
+          <p class="text-xs uppercase tracking-wider text-ink/60">Currently</p>
+          <ul class="mt-2 text-sm text-ink/80 list-disc list-inside space-y-1">
+            <li>Incoming SWE Intern @ Coinbase</li>
+            <li>Incoming President @ Phi Chi Theta</li>
+            <li>Campus leadership & teaching initiatives</li>
+          </ul>
+        </div>
+
+        <!-- Skills (staggered down + to the right on md+) -->
+        <div class="mt-4 md:mt-8 md:max-w-[380px] md:ml-14 rounded-2xl border border-black/10 bg-[#fffdf7]/95 p-5 shadow-card">
+          <p class="text-xs uppercase tracking-wider text-ink/60">Skills</p>
+            <!-- Programming -->
+            <div class="mt-2">
+              <p class="text-[13px] font-bold text-ink/80">Languages</p>
+              <p class="mt-1 text-[13px] text-ink/80">
+                Python,  JavaScript,  TypeScript,  Java,  C,  React.js,  HTML/CSS,  Express.js,  MySQL,  OCaml
+              </p>
             </div>
-          </div>
-        </div>
-        <p class="mt-3 text-xs text-stone-400">Open to internships & collabs.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
-    <div class="rounded-2xl p-1.5 bg-gradient-to-b from-sky/20 to-fern/10 border border-white/10">
-      <div class="rounded-xl bg-dusk/60 p-6 text-center">
-        <h2 class="font-display text-3xl">Let’s talk</h2>
-        <p class="mt-2 text-stone-300">Email me or find me on LinkedIn/GitHub.</p>
-        <div class="mt-4 flex flex-wrap justify-center gap-3">
-          <a href="mailto:maishatakahashi@gmail.com" class="px-4 py-2 rounded-md bg-sky/20 hover:bg-sky/30 border border-white/10">Email</a>
-          <a href="https://www.linkedin.com/in/maisha-takahashi/" class="px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 border border-white/10">LinkedIn</a>
-          <a href="https://github.com/maytakahashi" class="px-4 py-2 rounded-md bg-fern/20 hover:bg-fern/30 border border-white/10">GitHub</a>
-          <a href="/assets/May_Takahashi_Resume.pdf" class="px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 border border-white/10">Résumé</a>
+            <!-- Tools -->
+            <div class="mt-3">
+              <p class="text-[13px] font-bold text-ink/80">Tools</p>
+              <p class="mt-1 text-[13px] text-ink/80">
+                Git,  AWS (DynamoDB, RDS, CloudWatch, Timestream, SNS),  GCP,  Linux,  Flask,  MATLAB,  LaTeX,  JIRA,  Confluence
+              </p>
+            </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="py-10 text-center text-stone-400 text-sm">
-    <p>© 2025 Maisha (May) Takahashi — built with care.</p>
-  </footer>
+<!-- PROJECTS (each has an IMAGE SLOT at top; easy to replace later) -->
+<section id="projects" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+  <h2 class="font-display text-3xl">Featured Projects</h2>
+  <p class="mt-2 text-ink/70">Two polished case studies beat ten unfinished ones.</p>
+
+  <div class="mt-6 grid md:grid-cols-2 gap-6">
+    <!-- Project 1 -->
+    <article class="rounded-2xl border border-black/10 bg-[#fffdf7] shadow-card overflow-hidden">
+      <!-- IMAGE SLOT (replace later). Using your ponyo.avif so you see it now. -->
+      <div class="w-full aspect-[16/9] bg-center bg-cover"
+           style="background-image:url('/assets/ponyo.avif')"></div>
+
+      <div class="p-5">
+        <h3 class="text-xl font-semibold">Market Owl</h3>
+        <p class="mt-1 text-sm text-ink/80">AI negotiator for Facebook Marketplace that reduced fraudulent exchanges by 80% and secured lowered prices in 95% of purchases.</p>
+        <ul class="mt-3 text-sm text-ink/80 space-y-1">
+          <li><span class="font-semibold">Stack:</span> Next.js, Tailwind, FastAPI, Ollama, LLaMA, Modal</li>
+          <li><span class="font-semibold">Highlights:</span> Listing & DM analysis; seller-specific prompts; Modal-deployed fine-tune</li>
+        </ul>
+        <div class="mt-4 flex gap-3">
+          <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-leaf/25 hover:bg-leaf/35 border border-black/10">Live</a>
+          <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">Code</a>
+          <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">Case Study</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="rounded-2xl border border-black/10 bg-[#fffdf7] shadow-card overflow-hidden">
+      <!-- IMAGE SLOT (replace later). Using your castle.webp for now. -->
+      <div class="w-full aspect-[16/9] bg-center bg-cover"
+           style="background-image:url('/assets/castle.webp')"></div>
+
+      <div class="p-5">
+        <h3 class="text-xl font-semibold">RU Pathway Planner</h3>
+        <p class="mt-1 text-sm text-ink/80">Scheduling tool for Rutgers students to plan up to four semesters, respecting prerequisites and major/minor overlaps across 150+ majors.</p>
+        <ul class="mt-3 text-sm text-ink/80 space-y-1">
+          <li><span class="font-semibold">Stack:</span> Svelte (Vite), Tailwind</li>
+          <li><span class="font-semibold">Highlights:</span> Constraint-aware combinations; clean UI for roadmap planning</li>
+        </ul>
+        <div class="mt-4 flex gap-3">
+          <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-leaf/25 hover:bg-leaf/35 border border-black/10">Live</a>
+          <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">Code</a>
+          <a href="#" class="text-sm px-3 py-1.5 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">Case Study</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Taller divider (chicks) -->
+<div class="divider-bg h-56 opacity-95 border-y border-black/10"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+  <h2 class="font-display text-3xl">Professional Experience</h2>
+  <div class="mt-6 grid gap-6">
+    <div class="rounded-2xl border border-black/10 bg-[#fffdf7] p-5 shadow-card">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h3 class="text-xl font-semibold">Jane Street — Software Engineering Fellow</h3>
+        <span class="text-sm text-ink/70">Jun 2025 – Aug 2025,  New York, NY</span>
+      </div>
+      <ul class="mt-2 text-sm text-ink/80 space-y-1">
+        <li>Built electronic trading bot (market-making/arbitrage across ETFs/ADRs/bonds).</li>
+        <li>Async systems & game AIs in OCaml; image/graph exercises.</li>
+        <li>Real-time strategy game in OCaml; ~50 entities under 2 ms/frame.</li>
+      </ul>
+    </div>
+
+    <div class="rounded-2xl border border-black/10 bg-[#fffdf7] p-5 shadow-card">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h3 class="text-xl font-semibold">Colgate-Palmolive — Software Development Intern</h3>
+        <span class="text-sm text-ink/70">Jan 2025 – May 2025,  Piscataway, NJ</span>
+      </div>
+      <ul class="mt-2 text-sm text-ink/80 space-y-1">
+        <li>Shipped GCP IAM role-removal & ticket-cancellation UX (React/JS); cut manual support tickets by 50%.</li>
+        <li>Added Freshservice mock system into CI/CD; improved release reliability.</li>
+        <li>Pre-release validation with GitHub Actions for thorough feature checks.</li>
+      </ul>
+    </div>
+
+    <div class="rounded-2xl border border-black/10 bg-[#fffdf7] p-5 shadow-card">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <h3 class="text-xl font-semibold">Munch Industries Inc. — Software Engineering Intern</h3>
+        <span class="text-sm text-ink/70">Jun 2024 – Dec 2024,  Philadelphia, PA</span>
+      </div>
+      <ul class="mt-2 text-sm text-ink/80 space-y-1">
+        <li>Automated onboarding via third-party API integrations; reduced ops time by 40%.</li>
+        <li>Machine-health data logging with Python + AWS (DynamoDB, RDS); batching at 8h/30m.</li>
+        <li>CloudWatch + SNS alerting; sensor dashboards; org-wide 2-minute notifications.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+  <h2 class="font-display text-3xl">Leadership on Campus</h2>
+  <div class="mt-6 grid md:grid-cols-3 gap-6">
+    <div class="rounded-2xl border border-black/10 bg-[#fffdf7] p-5 shadow-card">
+      <h3 class="font-semibold">Phi Chi Theta — President (incoming)</h3>
+      <p class="text-sm text-ink/70">Dec 2026,  New Brunswick, NJ</p>
+      <ul class="mt-2 text-sm text-ink/80 space-y-1">
+        <li>Oversees community service, professional, and social programs.</li>
+        <li>Focus on inclusive recruiting and high-bar events.</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl border border-black/10 bg-[#fffdf7] p-5 shadow-card">
+      <h3 class="font-semibold">Blueprint Incubator — VP, Frontend Web Dev</h3>
+      <p class="text-sm text-ink/70">Sep 2024 – Present,  New Brunswick, NJ</p>
+      <ul class="mt-2 text-sm text-ink/80 space-y-1">
+        <li>Led 5 instructors delivering an 8-week full-stack program to 20 fellows.</li>
+        <li>Created a directory of 50+ references and personalized guides.</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl border border-black/10 bg-[#fffdf7] p-5 shadow-card">
+      <h3 class="font-semibold">RU Origami Club — President & Founder</h3>
+      <p class="text-sm text-ink/70">Sep 2024 – Present,  New Brunswick, NJ</p>
+      <ul class="mt-2 text-sm text-ink/80 space-y-1">
+        <li>Built club site (HTML/CSS/JS + DNS); showcases events & involvement.</li>
+        <li>Ran elections, recruitment, weekly workshops (350+ attendees).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (Let’s talk) -->
+<footer id="footer" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+  <div class="rounded-2xl border border-black/10 bg-[#fffdf7] p-6 text-center shadow-card">
+    <h2 class="font-display text-3xl">Contact</h2>
+    <div class="mt-4 flex flex-wrap justify-center gap-3">
+      <a href="mailto:maishatakahashi@gmail.com" class="px-4 py-2 rounded-md bg-leaf/25 hover:bg-leaf/35 border border-black/10">Email</a>
+      <a href="https://www.linkedin.com/in/maisha-takahashi/" class="px-4 py-2 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">LinkedIn</a>
+      <a href="https://github.com/maytakahashi" class="px-4 py-2 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">GitHub</a>
+      <a href="/assets/May_Takahashi_Resume.pdf" class="px-4 py-2 rounded-md bg-ink/5 hover:bg-ink/10 border border-black/10">Résumé</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
